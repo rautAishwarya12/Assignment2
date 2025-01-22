@@ -1,0 +1,92 @@
+//classes
+class Employee{
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  Employee2() {
+    console.log(this.name);
+  }
+}
+
+const Emp= new Employee('John', 30);
+Emp.Employee2();
+
+VM598:8 John
+
+//promise
+const fetchData = new Promise((resolve, reject) => {
+  const success = true;
+  
+  if(success) {
+    resolve('Data fetched successfully!');
+  } else {
+    reject('Error fetching data');
+  }
+});
+
+fetchData
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error)); 
+
+VM621:12 Data fetched successfully!
+Promise {<fulfilled>: undefined}[[Prototype]]: Promisecatch: ƒ catch()constructor: ƒ Promise()finally: ƒ finally()length: 1name: "finally"arguments: (...)caller: (...)[[Prototype]]: ƒ ()[[Scopes]]: Scopes[0]then: ƒ then()Symbol(Symbol.toStringTag): "Promise"[[Prototype]]: Object[[PromiseState]]: "fulfilled"[[PromiseResult]]: 
+
+//template String
+const EmployeeName= 'John';
+const CompanyName= 'VS';
+const Years= 10;
+const templateString= `Hello, my name is ${EmployeeName} ,my comapany name is ${CompanyName} and I am working last ${Years} years.`;
+console.log(templateString);  
+
+VM675:8 Hello, my name is John ,my comapany name is VS and I am working last 10 years.
+
+//Arrow Function
+function mul(a, b) {
+  return a * b;
+}
+const mulWithArrow = (a, b) => a * b;
+console.log(mul(2, 3));  
+console.log(mulWithArrow(2, 3)); 
+
+VM825:5 6
+VM825:6 6
+
+
+//Destructing
+const Value= [1, 2, 3,4];
+const [Black, White,yellow,pink]= Value
+console.log(Black, White);  
+console.log(yellow); 
+
+VM845:1 2
+VM845:3
+
+// Default parameters
+function Emp(lang = 'java') {
+  console.log(`Known language, ${lang}`);
+}
+
+// Default parameters
+function Employee1(lang = 'java') {
+  console.log(`Known language, ${lang}`);
+}
+Employee1('react');
+Employee1(); 
+
+VM863:3 Known language, react
+VM863:3 Known language, java
+
+//let keyword
+let name = 'John';
+name = 'Doe';
+
+'Doe'
+
+//const
+const year = 2025;
+year = 2030;  
+VM873:3 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:3:6
+(anonymous) @ VM873:3Understand this errorAI
